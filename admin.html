@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin - Stok Nomor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>🔐 Admin Panel</h1>
+</div>
+
+<div class="admin-container">
+
+  <!-- LOGIN -->
+  <div id="loginSection" class="admin-card">
+    <h2>Login Admin</h2>
+    <div id="loginMsg"></div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="admin@email.com">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="••••••••">
+    </div>
+    <button class="btn btn-primary" onclick="login()">Masuk</button>
+  </div>
+
+  <!-- ADMIN AREA -->
+  <div id="adminSection" class="hidden">
+    <div class="admin-card">
+      <h2>➕ Tambah Nomor Baru</h2>
+      <div id="addMsg"></div>
+      <div class="form-group">
+        <label>Negara</label>
+        <select id="inputNegara">
+          <option value="Indonesia">🇮🇩 Indonesia</option>
+          <option value="Mali">🇲🇱 Mali</option>
+          <option value="Senegal">🇸🇳 Senegal</option>
+          <option value="Malaysia">🇲🇾 Malaysia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nomor</label>
+        <input type="text" id="inputNomor" placeholder="0812-xxxx-xxxx">
+      </div>
+      <div class="form-group">
+        <label>Harga (Rp)</label>
+        <input type="number" id="inputHarga" placeholder="25000">
+      </div>
+      <button class="btn btn-primary" onclick="tambahNomor()">Tambah ke Stok</button>
+    </div>
+
+    <div class="admin-card">
+      <h2>📋 Daftar Stok</h2>
+      <div id="adminList"><p class="loading">Memuat...</p></div>
+    </div>
+
+    <button class="btn btn-danger" style="width:100%;margin-top:8px;" onclick="logout()">Logout</button>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin.js"></script>
+</body>
+</html>
